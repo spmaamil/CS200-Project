@@ -15,25 +15,25 @@ public class RandomMaze
 
 	public RandomMaze(int width, int height)
 	{
-	row = height;
-	row += (row % 2 == 0)? 1:0;
-	col = width;
-	col +=(col % 2 == 0)? 1: 0;
-	board = new boolean[height][width];
+        row = height;
+	    row += (height % 2 == 0)? 1:0;
+	    col = width;
+	    col +=(width % 2 == 0)? 1: 0;
+	    board = new boolean[row][col];
 
 
 
-	int r = (int)(Math.random() * row);
-	while(r%2==0)
-	r = (int)(Math.random() * row);
+	    int r = (int)(Math.random() * row);
+	    while(r%2==0)
+	        r = (int)(Math.random() * row);
 
-	int c = (int)(Math.random() * col);
-	while(c%2==0)
-	c = (int)(Math.random() * col);
+	    int c = (int)(Math.random() * col);
+	    while(c%2==0)
+	        c = (int)(Math.random() * col);
 
-	System.out.println(board[0][0]);
-	board[r][c] = true;
-	generateMaze(r, c);
+	    System.out.println(board[0][0]);
+	    board[r][c] = true;
+	    generateMaze(r, c);
 	}
 
 	private void generateMaze(int row, int col)
@@ -117,12 +117,12 @@ public class RandomMaze
 		return toRet;
 	}
 
-	/*public static void main(String args[])
+	public static void main(String args[])
 	{
 	int w = Integer.parseInt(args[0]);
 	int h = Integer.parseInt(args[1]);
 
 	RandomMaze s = new RandomMaze(w,h);
 	System.out.println(s);
-	}*/
+	}
 }
