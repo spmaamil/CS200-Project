@@ -2,7 +2,6 @@ import java.util.*;
 public class MazeSolver
 {
     //CREDIT FOR MAZE SOLVING ALGORITHM GOES TO WIKIPEDIA
-    private int x,y;
     private boolean board[][];
     private boolean wasHere[][];
     private boolean correctPath[][];
@@ -15,10 +14,18 @@ public class MazeSolver
         col = board.length;
         wasHere = new boolean[row][col];
         correctPath = new boolean[row][col];
-        x = 1;
-        y = 0;
+        
     }
-
+    public void loadMaze(boolean[][] board)
+    { 
+        this.board = board.clone();
+        
+        row = board.length;
+        col = board.length;
+        wasHere = new boolean[row][col];
+        correctPath = new boolean[row][col];
+        
+    }
     public void solveMaze()
     {
         for(int row = 0; row < this.row; row++)
@@ -31,7 +38,7 @@ public class MazeSolver
         boolean b = solveMaze(1,1); 
     }
 
-    public boolean solveMaze(int x, int y)
+    private boolean solveMaze(int x, int y)
     { 
          
         if(x == row - 1 && y == col - 2)
@@ -66,7 +73,10 @@ public class MazeSolver
 
        return false;
     } 
-	
+    public boolean[][] getBoard()
+    {
+        return correctPath;
+    }    
      //public static void main(String args[])
     // {
      //   MazeSolver m = new MazeSolver(new RandomMaze(20, 20).getBoard(), 1, 0);

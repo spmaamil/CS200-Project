@@ -38,6 +38,23 @@ public class RandomMaze
         board[row - 1 ][col - 2] = true;
     }
 
+    public void generateMaze()
+    {
+        board = new boolean[row][col];
+        int r = (int)(Math.random() * row);
+	    while(r%2==0)
+	        r = (int)(Math.random() * row);
+
+	    int c = (int)(Math.random() * col);
+	    while(c%2==0)
+	        c = (int)(Math.random() * col);
+
+	    //System.out.println(board[0][0]);
+	    board[r][c] = true;
+	    generateMaze(r, c);
+	    board[0][1] = true;
+        board[row - 1 ][col - 2] = true; 
+    }
 	private void generateMaze(int row, int col)
 	{
 		int[] rand = randDirs();
