@@ -34,7 +34,9 @@ public class RandomMaze
 	    System.out.println(board[0][0]);
 	    board[r][c] = true;
 	    generateMaze(r, c);
-	}
+	    board[0][1] = true;
+        board[row - 1 ][col - 2] = true;
+    }
 
 	private void generateMaze(int row, int col)
 	{
@@ -117,12 +119,12 @@ public class RandomMaze
 		return toRet;
 	}
 
-	/*public static void main(String args[])
+	public static void main(String args[])
 	{
 	int w = Integer.parseInt(args[0]);
 	int h = Integer.parseInt(args[1]);
 
 	RandomMaze s = new RandomMaze(w,h);
 	System.out.println(s);
-	}*/
+	}
 }

@@ -7,6 +7,7 @@ public class InputPane extends JPanel
     public InputPane(MazeShower maze)
     {
         this.maze = maze;
-        
+        this.setSize(250,500); 
+        //TODO:: Create pause, start, step, and size buttons.
     }
 }
