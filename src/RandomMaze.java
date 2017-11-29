@@ -117,12 +117,12 @@ public class RandomMaze
 		return toRet;
 	}
 
-	public static void main(String args[])
+	/*public static void main(String args[])
 	{
 	int w = Integer.parseInt(args[0]);
 	int h = Integer.parseInt(args[1]);
 
 	RandomMaze s = new RandomMaze(w,h);
 	System.out.println(s);
-	}
+	}*/
 }

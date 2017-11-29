@@ -18,11 +18,11 @@ public class MazeShower extends JPanel implements Runnable
           frame.pack();
           frame.setVisible(true);
           maze.start();
+//          maze.suspend();
      }    
      public MazeShower()
      { 
-          this.setSize(500,500);       
-          
+          this.setSize(500,500);                 
      }
 
      public void start()
@@ -43,26 +43,31 @@ public class MazeShower extends JPanel implements Runnable
      }
      public void paintComponent(Graphics g)
      {
-          g.setColor(Color.black);
+          int rnd = (int)(Math.random() * 256); 
+          g.setColor(new Color(rnd % 200, rnd % 100, rnd));
           g.fillRect(0,0,500,500);
      }
 
      public void run()
      {
           suspended = false;
-          synchronized(this)
-          {
-               while(true)
+          
+
+           while(true)
+           {
+               synchronized(this)
                {
-                    try 
-                    {
-                         while(suspended)
-                              wait();
-                    } catch (Exception e) 
-                    {
-                         //TODO: handle exception
-                    }
-               }
+                   try
+                   {
+//                       System.out.println(suspended);
+                       this.repaint();
+                       while(suspended)
+                           wait();
+                   }
+                   catch(Exception e)
+                   {
+                   }
+               } 
           }
 
      }
