@@ -6,13 +6,6 @@ public class RandomMaze
 	private int row;
 	private int col;
 
-
-	final int UP = 1;
-	final int DOWN = 2;
-	final int LEFT = 3;
-	final int RIGHT = 4;
-
-
 	public RandomMaze(int width, int height)
 	{
         row = height;
