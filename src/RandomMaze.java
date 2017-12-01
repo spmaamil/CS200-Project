@@ -1,5 +1,12 @@
 import java.util.*;
-
+/**
+ * This class creates a maze using the Depth Search algorithm. It can only create mazes with an odd number of columns and rows
+ *  but it doesn't have to be a square.
+ *
+ *  Jett Kaspar, Nathan Miller, Cody Murrell, Colin Braden 
+ *  RandomMaze.java
+ *
+ */
 public class RandomMaze
 {
 	private boolean board[][];

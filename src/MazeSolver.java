@@ -1,4 +1,11 @@
 import java.util.*;
+/**
+ * This class solves mazes given a maze the start coordinates and the end coordinates.
+ *  it will return false if the maze is unsolvable, but because of the way the DepthSearch algorithm works 
+ *  there will always be an exit
+ * Jett Kaspar, Nathan Miller, Cody Murrell, Colin Braden
+ * MazeSolver.java
+ */
 public class MazeSolver
 {
     //CREDIT FOR MAZE SOLVING ALGORITHM GOES TO WIKIPEDIA
