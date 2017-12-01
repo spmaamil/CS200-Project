@@ -1,5 +1,10 @@
-	import javax.swing.*;
-	import java.awt.*;
+/* Jett, Cody, Nathan, Colin
+ * MazeShower.java
+ * <MazeShower.java class utilizes both the RandomMaze and MazeSolver class to create a main method in order to run for our program>
+ * <It also includes several supporting methods in order to successfully modify our GUI>
+ */
+import javax.swing.*;
+import java.awt.*;
 
 	public class MazeShower extends JPanel
 	{
@@ -7,7 +12,12 @@
          private MazeSolver solver;
          private boolean[][] curBoard;
 	     private boolean[][] solvedBoard;
-         public static void main(String args[])
+         /**main
+          * main method is what is ran during execution of our program
+         * @param args - String arguments from command line
+         * @return void
+         */
+        public static void main(String args[])
 	     {
 	          JFrame frame = new JFrame("Maze creater, and Solver");
 	          MazeShower maze = new MazeShower();
@@ -31,14 +41,22 @@
               //solvedBoard = solver.getBoard();
               
          }
-         public void generate()
+         /**generate
+         * Generate method is what is used by the generate button to redraw a new maze
+         * @return void
+         */
+        public void generate()
          {
               random.generateMaze();
               curBoard = random.getBoard().clone();
               solvedBoard = new boolean[curBoard.length][curBoard.length];
               this.repaint();
          }   
-         public void solve()
+         /**solve
+         * Solve method is what is used in order to solve the maze on screen when solve button is pressed
+         * @return void
+         */
+        public void solve()
          {
               solver.loadMaze(curBoard); 
               solver.solveMaze();
@@ -46,11 +64,19 @@
               this.repaint();
          }
 
-         public void setSize(int size)
+         /**setSize
+          * Sets the size based upon which button is pressed in GUI (Small, Medium, Large)
+         * @param size - Int value of maze to set to
+         */
+        public void setSize(int size)
          {
             random = new RandomMaze(size, size);
             generate();
          }  
+        /**paintComponent
+         * paintComponent is what draw and sets up the pane that displays the actual maze in the GUI
+         * @return void
+         */
          public void paintComponent(Graphics g)
 	     {
 	    	 g.clearRect(0,0,this.getWidth(),this.getHeight());
